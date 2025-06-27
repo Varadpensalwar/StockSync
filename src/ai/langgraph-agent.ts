@@ -15,7 +15,7 @@ import {
 // Initialize OpenAI chat model
 const chat = new ChatOpenAI({
   openAIApiKey: process.env.OPENAI_API_KEY!,
-  modelName: 'gpt-4o',
+  modelName: 'gpt-4.1-nano',
 });
 
 const embeddings = new OpenAIEmbeddings({ openAIApiKey: process.env.OPENAI_API_KEY! });

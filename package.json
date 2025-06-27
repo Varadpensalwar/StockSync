@@ -4,7 +4,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "npx prisma migrate deploy && node dist/bot/telegram-bot.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node src/bot/telegram-bot.ts"
   },
