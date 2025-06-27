@@ -68,5 +68,11 @@ Both Railway and Render support Dockerfile-based deployments. Your Dockerfile is
 ### 4. Webhooks (Optional)
 - If you want to use Telegram webhooks instead of polling, expose a port and set the webhook URL in your bot settings.
 
+### 5. (Optional) Run Prisma Migrations
+If you have migrations, you can run:
+```
+npx prisma migrate deploy
+```
+
 ---
 MIT License 
