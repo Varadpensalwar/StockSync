@@ -3,6 +3,7 @@ dotenv.config();
 
 import TelegramBot from 'node-telegram-bot-api';
 import { agent } from '../ai/langgraph-agent';
+import type { Message } from 'node-telegram-bot-api';
 
 const token = process.env.TELEGRAM_BOT_TOKEN;
 if (!token) {
@@ -11,15 +12,15 @@ if (!token) {
 
 const bot = new TelegramBot(token, { polling: true });
 
-bot.onText(/\/start/, (msg) => {
+bot.onText(/\/start/, (msg: Message) => {
   bot.sendMessage(msg.chat.id, 'Welcome to StockSync! Send me a product question or use /help.');
 });
 
-bot.onText(/\/help/, (msg) => {
+bot.onText(/\/help/, (msg: Message) => {
   bot.sendMessage(msg.chat.id, 'You can ask about product stock, add new products, or ask general questions.');
 });
 
-bot.on('message', async (msg) => {
+bot.on('message', async (msg: Message) => {
   // Ignore commands handled above
   if (msg.text && (msg.text.startsWith('/start') || msg.text.startsWith('/help'))) return;
   if (!msg.text) return;

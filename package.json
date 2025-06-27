@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@types/node": "^24.0.4",
+    "@types/node-telegram-bot-api": "^0.64.9",
     "typescript": "^5.8.3"
   }
 }

@@ -10,7 +10,7 @@ export async function createProduct({ name, stock, price, supplierName, supplier
   supplierContact: string;
 }): Promise<Product> {
   // Find or create supplier
-  let supplier = await prisma.supplier.findUnique({ where: { name: supplierName } });
+  let supplier = await prisma.supplier.findFirst({ where: { name: supplierName } });
   if (!supplier) {
     supplier = await prisma.supplier.create({ data: { name: supplierName, contact: supplierContact } });
   }

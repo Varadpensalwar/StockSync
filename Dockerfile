@@ -11,8 +11,8 @@ RUN npm ci --omit=dev
 # Copy source code
 COPY . .
 
-# Fix permissions for prisma binary
-RUN chmod +x node_modules/.bin/prisma
+# Fix permissions for prisma and tsc binaries
+RUN chmod +x node_modules/.bin/prisma && chmod +x node_modules/.bin/tsc
 
 # Generate Prisma client
 RUN npx prisma generate

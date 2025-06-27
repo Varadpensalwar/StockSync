@@ -1,12 +1,10 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-import { ChatOpenAI } from 'langchain/chat_models/openai';
-import { OpenAIEmbeddings } from 'langchain/embeddings/openai';
+import { ChatOpenAI } from '@langchain/openai';
+import { OpenAIEmbeddings } from '@langchain/openai';
 import { MemoryVectorStore } from 'langchain/vectorstores/memory';
 import { RetrievalQAChain } from 'langchain/chains';
-import { createAgent } from 'langgraph';
-import { z } from 'zod';
 import {
   createProduct,
   getProductByName,
