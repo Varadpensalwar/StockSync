@@ -1,0 +1,26 @@
+// Prisma schema for StockSync
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql" // Change to your DB provider if needed
+  url      = env("DATABASE_URL")
+}
+
+model Supplier {
+  id      Int      @id @default(autoincrement())
+  name    String
+  contact String
+  products Product[]
+}
+
+model Product {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  stock     Int
+  price     Float
+  supplier  Supplier @relation(fields: [supplierId], references: [id])
+  supplierId Int
+} 

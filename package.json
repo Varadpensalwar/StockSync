@@ -1,0 +1,29 @@
+{
+  "name": "stocksync",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node src/bot/telegram-bot.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^6.10.1",
+    "dotenv": "^16.6.0",
+    "exceljs": "^4.4.0",
+    "langchain": "^0.3.29",
+    "node-telegram-bot-api": "^0.66.0",
+    "openai": "^5.8.1",
+    "prisma": "^6.10.1",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.4",
+    "typescript": "^5.8.3"
+  }
+}
